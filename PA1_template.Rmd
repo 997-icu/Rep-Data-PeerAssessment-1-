@@ -1,8 +1,9 @@
 ---
-title: "Reproducible Research: Peer Assessment 1"
-output: 
+title: 'Reproducible Research: Peer Assessment 1'
+output:
+  pdf_document: default
   html_document:
-    keep_md: true
+    keep_md: yes
 ---
 
 ```{r globaloptions}
@@ -30,7 +31,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #unzip("activity.zip")
 data <- read.csv("activity.csv")
 ```
-  
+**Transforming data isn't necessary in my analysis procedure**  
 
 
 

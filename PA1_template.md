@@ -51,7 +51,7 @@ knitr::opts_chunk$set(echo = TRUE)
 #unzip("activity.zip")
 data <- read.csv("activity.csv")
 ```
-  
+**Transforming data isn't necessary in my analysis procedure**  
 
 
 
