@@ -1,10 +1,14 @@
 ---
-title: 'Reproducible Research: Peer Assessment 1'
-output:
+title: "Reproducible Research: Peer Assessment 1"
+output: 
   html_document:
-    keep_md: yes
-  pdf_document: default
+    keep_md: true
 ---
+
+
+```r
+knitr::opts_chunk$set(fig.path = "figures/")
+```
 
 
 ## Loading and preprocessing the data 
@@ -80,7 +84,7 @@ head(total_steps_perday)
 ggplot(total_steps_perday,mapping = aes(x= steps)) +geom_histogram(fill = "Red",color = "White",bins = 30)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-5-1.png)<!-- -->
+![](figures/unnamed-chunk-5-1.png)<!-- -->
 
 ### 3.Mean and median number of steps taken each day
 **Calculate and report the mean and median of the total number of steps taken per day**
@@ -108,7 +112,7 @@ data %>% filter(!is.na(steps)) %>%group_by(interval) %>%
     geom_line(color = "red",size = 1)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-7-1.png)<!-- -->
+![](figures/unnamed-chunk-7-1.png)<!-- -->
 
 ### 5.The 5-minute interval that, on average, contains the maximum number of steps
 
@@ -204,7 +208,7 @@ total_steps_perday2 <- new_data %>% filter(!is.na(steps))%>% group_by(date) %>% 
 ggplot(total_steps_perday2,mapping = aes(x= steps)) +geom_histogram(fill = "Blue",color = "White",bins = 30)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+![](figures/unnamed-chunk-11-1.png)<!-- -->
 
 
 ```r
@@ -270,7 +274,7 @@ summary(new_data)
 new_data %>% group_by(week_day_or_not,interval) %>% summarise(avg = mean(steps)) %>% ggplot(mapping = aes(interval,avg)) + geom_line(color = "Red",size = 1) +facet_wrap(~week_day_or_not,nrow = 2,ncol = 1)
 ```
 
-![](PA1_template_files/figure-html/unnamed-chunk-14-1.png)<!-- -->
+![](figures/unnamed-chunk-14-1.png)<!-- -->
 
 
 ### 9.All of the R code needed to reproduce the results (numbers, plots, etc.) in the report (above)
